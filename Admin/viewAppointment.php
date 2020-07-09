@@ -473,6 +473,14 @@ if (isset($_GET['getid']))//get id eken ena passwaord eka allagannawa
     {
          echo '<div class="alert alert-danger">Cant Delete!</div>';                            
     }
+    if(isset($_GET['true']))
+    {
+         echo '<div class="alert alert-success">Appointment Scheduled & Email sent </div>';                            
+    }
+    if(isset($_GET['false']))
+    {
+         echo '<div class="alert alert-danger">An error has ocurred </div>';                            
+    }
 ?>
                        
 <!--Refresh and hide--> 
@@ -539,14 +547,13 @@ if (isset($_GET['getid']))//get id eken ena passwaord eka allagannawa
                         <td>'.$time.'</td>
                         <td>
                             
-
                             <form action="php/comfirmAppointment.php?id='.$id.'" method="POST" >
                             <button type="submit" name="submit" title="Send" ><i class="fa fa-check aria-hidden="true"></i></button>
                             <input type="hidden" value='.$idnumber.' name="id">
                             <input type="hidden" value='.$email.' name="email">
                             <input type="hidden" value='.$time.' name="time">
                             <input type="hidden" value='.$date.' name="date">
-                            <a href="php/deleteAppointment.php?delid='.$row["id"].'"><i class="fa fa-times"></i></a>
+                            <a href="php/deleteAppointment.php?id='.$id.'"><i class="fa fa-times"></i></a>
                             </form>
                         </td>
                     </tr>';
