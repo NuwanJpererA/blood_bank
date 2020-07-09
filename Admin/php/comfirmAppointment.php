@@ -5,7 +5,7 @@ mysqli_select_db($conn, "blood");
 
 if (isset($_POST['submit']))
 {
-    $id=$_POST["id"];
+    $id=$_GET["id"];
     
     
 /*mail code*/

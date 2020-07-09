@@ -503,7 +503,7 @@ if (isset($_GET['getid']))//get id eken ena passwaord eka allagannawa
                $conn = mysqli_connect("localhost","root","");
                mysqli_select_db($conn, "blood");
 
-               $aapointment = "SELECT * FROM appointments ";
+               $aapointment = "SELECT * FROM appointments  WHERE status='yet to confirm'";
 
                $result = mysqli_query($conn, $aapointment);
 
